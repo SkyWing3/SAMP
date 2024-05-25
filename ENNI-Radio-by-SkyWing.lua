@@ -3,7 +3,7 @@ require 'lib.moonloader'
 
 script_name("ENNI")
 script_url("https://github.com/SkyWing3/SAMP")
-script_version("25.06.2022")
+script_version("25.05.2024")
 local encoding = require 'encoding'
 encoding.default = 'CP1252'
 u8 = encoding.UTF8
