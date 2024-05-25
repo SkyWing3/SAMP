@@ -16,6 +16,8 @@ local personas_autorizadas = {
     "ryan_wind",
 }
 
+-- Se actualizo mi cleo jajaja
+
 -- https://github.com/qrlk/moonloader-script-updater
 local enable_autoupdate = true -- false to disable auto-update + disable sending initial telemetry (server, moonloader version, script version, samp nickname, virtual volume serial number)
 local autoupdate_loaded = false
