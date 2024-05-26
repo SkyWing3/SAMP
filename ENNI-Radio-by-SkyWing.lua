@@ -145,6 +145,7 @@ function conectar()
     for i,k in ipairs(personas_autorizadas) do
         if k == name:lower() then
             res = true
+            sampAddChatMessage(string.format(k.." "..name:lower(), name), 0xFF00CCFF)
         end
     end
     if not res then
