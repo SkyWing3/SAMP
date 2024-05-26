@@ -55,7 +55,6 @@ if enable_autoupdate then
                                                     print('La descarga de la actualizacion esta completa.')
                                                     sampAddChatMessage((prefix .. 'La actualizacion esta completa!'), color)
                                                     goupdatestatus = true
-                                                    updated = true
                                                     lua_thread.create(function()
                                                         wait(500)
                                                         thisScript():reload()
@@ -73,8 +72,6 @@ if enable_autoupdate then
                                     )
                                 else
                                     update = false
-                                    updated = true
-                                    sampAddChatMessage((prefix .. 'No se requiere actualizacion.'), -1)
                                     print('v' .. thisScript().version .. ': No se requiere actualizacion.')
                                     if info.telemetry then
                                         local ffi = require "ffi"
@@ -129,9 +126,6 @@ function main()
     while not isSampAvailable() do wait(100) end
     if autoupdate_loaded and enable_autoupdate and Update then
         pcall(Update.check, Update.json_url, Update.prefix, Update.url)
-    end
-    if not updated then
-        sampAddChatMessage("No funciona el actualizar", -1)
     end
     sampRegisterChatCommand("irc", sendIRCMessage)
     sampRegisterChatCommand("ref", sendIRCMessage)
